@@ -1,6 +1,6 @@
 package pointgenerate
 
-import "github.com/go-zs/cal/check"
+import "github.com/go-zs/calculation/check"
 
 const (
 	defaultMaxNumber = 13

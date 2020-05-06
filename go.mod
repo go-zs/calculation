@@ -1,4 +1,4 @@
-module github.com/go-zs/cal
+module github.com/go-zs/calculation
 
 go 1.14
 

@@ -92,9 +92,7 @@ func CopyFloat32(arr []float32) []int {
 
 func CopyInt(arr []int) []int {
 	res := make([]int, len(arr))
-	for i := range arr {
-		res[i] = arr[i]
-	}
+	copy(arr, res)
 	return res
 }
 
