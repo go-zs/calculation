@@ -24,10 +24,10 @@ func Generate24(f func(arr []int), options ...GenOption) {
 	for _, o := range options {
 		o(&option)
 	}
-	for i := 0; i <= option.maxNumber; i++ {
-		for j := 0; j <= i; j++ {
-			for m := 0; m <= j; m++ {
-				for n := 0; n <= m; n++ {
+	for i := 1; i <= option.maxNumber; i++ {
+		for j := 1; j <= i; j++ {
+			for m := 1; m <= j; m++ {
+				for n := 1; n <= m; n++ {
 					if check.Check24([]int{i, j, m, n}) {
 						f([]int{i, j, m, n})
 					}
