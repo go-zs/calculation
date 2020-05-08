@@ -1,6 +1,7 @@
 package pointgenerate
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -10,4 +11,5 @@ func TestGenerate24(t *testing.T) {
 		res = append(res, arr)
 	}
 	Generate24(testPrint, SetMaxNumber(24))
+	fmt.Println(res)
 }
