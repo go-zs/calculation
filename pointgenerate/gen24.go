@@ -29,7 +29,7 @@ func Generate24(f func(arr []int), options ...GenOption) {
 			for m := 1; m <= j; m++ {
 				for n := 1; n <= m; n++ {
 					if check.Check24([]int{i, j, m, n}) {
-						f([]int{i, j, m, n, getLevel(i)})
+						f([]int{i, j, m, n, getLevel(i, j, m, n)})
 					}
 				}
 			}
@@ -38,15 +38,27 @@ func Generate24(f func(arr []int), options ...GenOption) {
 }
 
 
-func getLevel(i int) int {
+func getLevel(i, j, m, n int) int {
+	v := Max(i, j, m, n)
 	switch  {
-	case i <= 10:
+	case v <= 10:
 		return 1
-	case i <= 16:
+	case v <= 16:
 		return 2
-	case i <=24:
+	case v <=24:
 		return 3
 	default:
 		return 4
 	}
+}
+
+func Max(intArr ...int) int {
+	var m int
+	for _, v := range intArr {
+		if v > m {
+			m = v
+		}
+	}
+
+	return m
 }
